@@ -2,10 +2,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
 	<groupId>com.zlp</groupId>
-	<artifactId>springcloud-fresh-config-server</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>springcloud-fresh-eureka-server</artifactId>
 	<packaging>jar</packaging>
 
 	<parent>
@@ -22,25 +20,22 @@
 	</properties>
 
 	<dependencies>
-		<!-- 添加web开发的支持 -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
+		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-
-		<!-- spring cloud config 客户端包 -->
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-config-server</artifactId>
-		</dependency>
-
-		<!-- Eureka服务注册的依赖包 -->
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-netflix-eureka-server</artifactId>
+			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
 	</dependencies>
-
+	
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -52,25 +47,25 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-
-	<!-- Package as an executable jar -->
-	<build>
-		<finalName>springcloud-fresh-config-server</finalName>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<mainClass>com.zlp.fresh.config.server.ConfigServerApplication</mainClass>
-				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>repackage</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
+	
+	 <!-- Package as an executable jar -->
+    <build>
+    <finalName>springcloud-fresh-eureka-server</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                	<mainClass>com.zlp.fresh.eureka.server.EurekaServerApplication</mainClass>
+                </configuration>
+                <executions>
+                	<execution>
+                		<goals>
+                			<goal>repackage</goal>
+                		</goals>
+                	</execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>

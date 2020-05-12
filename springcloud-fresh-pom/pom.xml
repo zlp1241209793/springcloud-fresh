@@ -60,6 +60,12 @@
 			<artifactId>druid</artifactId>
 			<version>1.1.10</version>
 		</dependency>
+		
+		<!-- spring boot 整合邮件发送 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+		</dependency>
 
 		<!-- 邮件发送的包 -->
 		<dependency>
