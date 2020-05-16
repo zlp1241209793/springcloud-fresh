@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 注意：namespace中的值必须是对应接口的全路径，SQL语句中的id值必须是这个接口中对应方法名称 -->
+<mapper namespace="com.zlp.fresh.mapper.ICartInfoMapper">
+	<insert id="add" parameterType="CartInfo">
+		insert into cartInfo values(#{cno}, #{mno}, #{gno}, #{num})
+	</insert>
+	
+	<select id="findByMno" parameterType="int" resultType="map">
+		select cno, gno from cartinfo where mno=#{_parameter}
+	</select>
+	
+	<select id="finds" parameterType="int" resultType="CartInfo">
+		select cno, cf.gno, num, pics, price, gname, unit, weight from cartinfo cf, goodsinfo gf where cf.gno=gf.gno and mno=#{_parameter}
+	</select>
+
+	<select id="findByCnos" resultType="CartInfo">
+		select cno, cf.gno, num, gname, price, pics, unit, weight
+		from cartinfo cf, goodsinfo gf where cf.gno=gf.gno and cno in
+		<foreach collection="array" open="(" separator="," close=")" item="item">
+			#{item}
+		</foreach>
+	</select>
+	
+	<delete id="delete">
+		delete from cartinfo
+		<foreach collection="array" open="where cno in (" separator="," close=")" item="item">
+			#{item}
+		</foreach>
+	</delete>
+	
+	<delete id="deleteByCno" parameterType="string">
+		delete from cartInfo where cno=#{_parameter}
+	</delete>
+	
+	<update id="update" parameterType="CartInfo">
+		update cartinfo set num= num + #{num} where cno = #{cno}
+	</update>
+	
+	<update id="updateByMnoAndGno" parameterType="CartInfo">
+		update cartinfo set num= num + #{num} where gno=#{gno} and mno=#{mno}
+	</update>
+</mapper>

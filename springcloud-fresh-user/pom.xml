@@ -27,7 +27,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<mainClass>com.zlp.fresh.user.FreshUserApplication</mainClass>
+					<mainClass>com.zlp.fresh.FreshUserApplication</mainClass>
 				</configuration>
 				<executions>
 					<execution>

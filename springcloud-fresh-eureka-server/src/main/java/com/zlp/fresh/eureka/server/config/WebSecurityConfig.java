@@ -7,8 +7,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 @Configuration
 @EnableWebSecurity
-public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-	// 高版本的spring cloud 会默认启动csrf功能，级跨域访问功能
+public class WebSecurityConfig  extends WebSecurityConfigurerAdapter{
+	//高版本的spring cloud 自动默认开启csrf功能，即跨域访问
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.csrf().ignoringAntMatchers("/eureka/**");

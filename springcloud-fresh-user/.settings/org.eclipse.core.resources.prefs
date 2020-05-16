@@ -1,3 +1,12 @@
 eclipse.preferences.version=1
 encoding//src/main/java=UTF-8
+encoding//src/main/java/com/zlp/fresh/mapper/IAddrInfoMapper.java=UTF-8
+encoding//src/main/java/com/zlp/fresh/mapper/IAdminInfoMapper.java=UTF-8
+encoding//src/main/java/com/zlp/fresh/mapper/ICartInfoMapper.java=UTF-8
+encoding//src/main/java/com/zlp/fresh/mapper/IGoodsInfoMapper.java=UTF-8
+encoding//src/main/java/com/zlp/fresh/mapper/IGoodsTypeMapper.java=UTF-8
+encoding//src/main/java/com/zlp/fresh/mapper/IMenberInfoMapper.java=UTF-8
+encoding//src/main/java/com/zlp/fresh/mapper/IOrderInfoMapper.java=UTF-8
+encoding//src/main/java/com/zlp/fresh/mapper/IOrderItemInfoMapper.java=UTF-8
+encoding//src/main/java/com/zlp/fresh/util/SendMailUtil.java=UTF-8
 encoding/<project>=UTF-8

@@ -42,7 +42,7 @@ spring:
 # mybatis配置
 mybatis: 
    mapper-locations: mapper/*Mapper.xml
-   type-aliases-package: com.zlp.fresh.user.entity # 需要扫描的启用别名的类所在的包
+   type-aliases-package: com.zlp.fresh.entity # 需要扫描的启用别名的类所在的包
    
 eureka: 
    client: 

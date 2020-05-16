@@ -10,21 +10,21 @@ spring:
    profiles: dev-6868
    application:
       name: eureka-server
-   security: 
-      user: 
+   security:
+      user:
          name: navy
          password: 123456
    
 eureka:
-   instance: 
+   instance:
       hostname: localhost
    client:
-      register-with-eureka: false # 如果要注册到集群中需要改成true
-      fetch-registery: false
+      registerWithEureka: false # 如果要注册到集群中需要改成true
+      fetchRegistry: false
       serviceUrl:
          defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:${server.port}/eureka
    server:
-         enable-self-preservation: false # 关闭自我保护
+      enableSelfPreservation: false # 关闭自我保护
       
 ---
 server:
@@ -40,12 +40,12 @@ spring:
          password: 123456
    
 eureka:
-   instance: 
+   instance:
       hostname: localhost
    client:
-      register-with-eureka: false # 如果要注册到集群中需要改成true
-      fetch-registery: false
+      registerWithEureka: false # 如果要注册到集群中需要改成true
+      fetchRegistry: false
       serviceUrl:
          defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:${server.port}/eureka
    server:
-         enable-self-preservation: false # 关闭自我保护
+      enableSelfPreservation: false # 关闭自我保护
